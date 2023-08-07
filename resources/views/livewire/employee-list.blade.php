@@ -9,7 +9,7 @@
     </div>
     <div class="flex flex-row gap-2">
       <div x-data="{ open: false }">
-        <button @click="open = true" class="bg-[#319848] p-2 rounded-md text-white flex gap-2 items-center shadow-md">
+        <button @click="open = true" class="bg-[#248a8a] p-2 rounded-md text-white flex gap-2 items-center shadow-md">
           <i class="fa fa-plus"></i>
           <span>Agregar empleado</span>
         </button>
@@ -17,12 +17,21 @@
           <livewire:modal />
         </div>
       </div>
+      <div x-data="{ open: false }">
+        <button @click="open = true" class="bg-[#3941b4] p-2 rounded-md text-white flex gap-2 items-center shadow-md">
+          <i class="fa fa-money"></i>
+          <span>Agregar monto</span>
+        </button>
+        <div @click.outside="open = false" x-show="open" class="fixed inset-0 z-10 overflow-y-auto">
+          <livewire:modal />
+        </div>
+      </div>
       <button class="bg-[#319848] p-2 rounded-md text-white flex gap-2 items-center shadow-md">
-        <i class="fa fa-search"></i>
+        <i class="fa fa-cloud-download"></i>
         <span>Importar Excel</span>
       </button>
       <button class="bg-[#9B34BF] p-2 rounded-md text-white flex gap-2 items-center shadow-md">
-        <i class="fa fa-search"></i>
+        <i class="fa fa-cloud-upload"></i>
         <span>Exportar Excel</span>
       </button>
     </div>

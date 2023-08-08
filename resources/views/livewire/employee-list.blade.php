@@ -1,149 +1,202 @@
-<div class="flex flex-col gap-10">
-  <div class="flex justify-between">
-    <div class="flex flex-row gap-2">
-      <input placeholder="Ingrese el empleado" class="border-0 focus:border-white rounded-md shadow-md" type="text">
-      <button class="bg-[#314F9A] p-2 rounded-md text-white flex gap-2 items-center shadow-md">
-        <i class="fa fa-search"></i>
-        <span>Buscar</span>
-      </button>
+<div class='content-header'>
+  <div class="content-header-search">
+    <i class="fa fa-search content-header-search-icon" aria-hidden="true"></i>
+    <input class="content-header-search-input" placeholder="Ingresar empleado" type="text" />
+  </div>
+  <div class="content-header-actions">
+    <button class="content-header-actions-btn">
+      <i class="fa fa-cloud-download content-header-actions-btn-icon" aria-hidden="true"></i>
+      <span>Importar Excel</span>
+    </button>
+    <button class="content-header-actions-btn">
+      <i class="fa fa-cloud-upload content-header-actions-btn-icon" aria-hidden="true"></i>
+      <span>Exportar Excel</span>
+    </button>
+    <button class="content-header-actions-btn">
+      <i class="fa fa-download content-header-actions-btn-icon" aria-hidden="true"></i>
+      <span>Cargar Datos</span>
+    </button>
+  </div>
+</div>
+<div class='content-body'>
+  <div class="content-body-table">
+    <div class="content-body-table-actions">
+      <span class="content-body-table-actions-text">Viendo 1 a 30 de 100 empleados</span>
     </div>
-    <div class="flex flex-row gap-2">
-      <div x-data="{ open: false }">
-        <button @click="open = true" class="bg-[#248a8a] p-2 rounded-md text-white flex gap-2 items-center shadow-md">
-          <i class="fa fa-plus"></i>
-          <span>Agregar empleado</span>
-        </button>
-        <div @click.outside="open = false" x-show="open" class="fixed inset-0 z-10 overflow-y-auto">
-          <livewire:modal />
-        </div>
+    <div class="content-body-table-header">
+      <div class="content-body-table-row">
+        <div class="content-body-table-row-item">N°</div>
+        <div class="content-body-table-row-item">Tipo de doc.</div>
+        <div class="content-body-table-row-item">DNI</div>
+        <div class="content-body-table-row-item">N° de cuenta</div>
+        <div class="content-body-table-row-item">Apellido paterno</div>
+        <div class="content-body-table-row-item">Apellido materno</div>
+        <div class="content-body-table-row-item">Nombres</div>
+        <div class="content-body-table-row-item">Modalidad de contratación</div>
       </div>
-      <div x-data="{ open: false }">
-        <button @click="open = true" class="bg-[#3941b4] p-2 rounded-md text-white flex gap-2 items-center shadow-md">
-          <i class="fa fa-money"></i>
-          <span>Agregar monto</span>
-        </button>
-        <div @click.outside="open = false" x-show="open" class="fixed inset-0 z-10 overflow-y-auto">
-          <livewire:modal />
-        </div>
+    </div>
+    <div class="content-body-table-body">
+      <div class="content-body-table-row">
+        <div class="content-body-table-row-item">1</div>
+        <div class="content-body-table-row-item">01</div>
+        <div class="content-body-table-row-item">23961599</div>
+        <div class="content-body-table-row-item">04721189452</div>
+        <div class="content-body-table-row-item">Yanqui</div>
+        <div class="content-body-table-row-item">Alvarez</div>
+        <div class="content-body-table-row-item">Elena</div>
+        <div class="content-body-table-row-item">Pensionista</div>
       </div>
-      <button class="bg-[#319848] p-2 rounded-md text-white flex gap-2 items-center shadow-md">
-        <i class="fa fa-cloud-download"></i>
-        <span>Importar Excel</span>
-      </button>
-      <button class="bg-[#9B34BF] p-2 rounded-md text-white flex gap-2 items-center shadow-md">
-        <i class="fa fa-cloud-upload"></i>
-        <span>Exportar Excel</span>
-      </button>
+      <div class="content-body-table-row">
+        <div class="content-body-table-row-item">1</div>
+        <div class="content-body-table-row-item">01</div>
+        <div class="content-body-table-row-item">23961599</div>
+        <div class="content-body-table-row-item">04721189452</div>
+        <div class="content-body-table-row-item">Yanqui</div>
+        <div class="content-body-table-row-item">Alvarez</div>
+        <div class="content-body-table-row-item">Elena</div>
+        <div class="content-body-table-row-item">Pensionista</div>
+      </div>
+      <div class="content-body-table-row">
+        <div class="content-body-table-row-item">1</div>
+        <div class="content-body-table-row-item">01</div>
+        <div class="content-body-table-row-item">23961599</div>
+        <div class="content-body-table-row-item">04721189452</div>
+        <div class="content-body-table-row-item">Yanqui</div>
+        <div class="content-body-table-row-item">Alvarez</div>
+        <div class="content-body-table-row-item">Elena</div>
+        <div class="content-body-table-row-item">Pensionista</div>
+      </div>
+      <div class="content-body-table-row">
+        <div class="content-body-table-row-item">1</div>
+        <div class="content-body-table-row-item">01</div>
+        <div class="content-body-table-row-item">23961599</div>
+        <div class="content-body-table-row-item">04721189452</div>
+        <div class="content-body-table-row-item">Yanqui</div>
+        <div class="content-body-table-row-item">Alvarez</div>
+        <div class="content-body-table-row-item">Elena</div>
+        <div class="content-body-table-row-item">Pensionista</div>
+      </div>
+      <div class="content-body-table-row">
+        <div class="content-body-table-row-item">1</div>
+        <div class="content-body-table-row-item">01</div>
+        <div class="content-body-table-row-item">23961599</div>
+        <div class="content-body-table-row-item">04721189452</div>
+        <div class="content-body-table-row-item">Yanqui</div>
+        <div class="content-body-table-row-item">Alvarez</div>
+        <div class="content-body-table-row-item">Elena</div>
+        <div class="content-body-table-row-item">Pensionista</div>
+      </div>
+      <div class="content-body-table-row">
+        <div class="content-body-table-row-item">1</div>
+        <div class="content-body-table-row-item">01</div>
+        <div class="content-body-table-row-item">23961599</div>
+        <div class="content-body-table-row-item">04721189452</div>
+        <div class="content-body-table-row-item">Yanqui</div>
+        <div class="content-body-table-row-item">Alvarez</div>
+        <div class="content-body-table-row-item">Elena</div>
+        <div class="content-body-table-row-item">Pensionista</div>
+      </div>
+      <div class="content-body-table-row">
+        <div class="content-body-table-row-item">1</div>
+        <div class="content-body-table-row-item">01</div>
+        <div class="content-body-table-row-item">23961599</div>
+        <div class="content-body-table-row-item">04721189452</div>
+        <div class="content-body-table-row-item">Yanqui</div>
+        <div class="content-body-table-row-item">Alvarez</div>
+        <div class="content-body-table-row-item">Elena</div>
+        <div class="content-body-table-row-item">Pensionista</div>
+      </div>
+      <div class="content-body-table-row">
+        <div class="content-body-table-row-item">1</div>
+        <div class="content-body-table-row-item">01</div>
+        <div class="content-body-table-row-item">23961599</div>
+        <div class="content-body-table-row-item">04721189452</div>
+        <div class="content-body-table-row-item">Yanqui</div>
+        <div class="content-body-table-row-item">Alvarez</div>
+        <div class="content-body-table-row-item">Elena</div>
+        <div class="content-body-table-row-item">Pensionista</div>
+      </div>
+      <div class="content-body-table-row">
+        <div class="content-body-table-row-item">1</div>
+        <div class="content-body-table-row-item">01</div>
+        <div class="content-body-table-row-item">23961599</div>
+        <div class="content-body-table-row-item">04721189452</div>
+        <div class="content-body-table-row-item">Yanqui</div>
+        <div class="content-body-table-row-item">Alvarez</div>
+        <div class="content-body-table-row-item">Elena</div>
+        <div class="content-body-table-row-item">Pensionista</div>
+      </div>
+      <div class="content-body-table-row">
+        <div class="content-body-table-row-item">1</div>
+        <div class="content-body-table-row-item">01</div>
+        <div class="content-body-table-row-item">23961599</div>
+        <div class="content-body-table-row-item">04721189452</div>
+        <div class="content-body-table-row-item">Yanqui</div>
+        <div class="content-body-table-row-item">Alvarez</div>
+        <div class="content-body-table-row-item">Elena</div>
+        <div class="content-body-table-row-item">Pensionista</div>
+      </div>
+      <div class="content-body-table-row">
+        <div class="content-body-table-row-item">1</div>
+        <div class="content-body-table-row-item">01</div>
+        <div class="content-body-table-row-item">23961599</div>
+        <div class="content-body-table-row-item">04721189452</div>
+        <div class="content-body-table-row-item">Yanqui</div>
+        <div class="content-body-table-row-item">Alvarez</div>
+        <div class="content-body-table-row-item">Elena</div>
+        <div class="content-body-table-row-item">Pensionista</div>
+      </div>
+      <div class="content-body-table-row">
+        <div class="content-body-table-row-item">1</div>
+        <div class="content-body-table-row-item">01</div>
+        <div class="content-body-table-row-item">23961599</div>
+        <div class="content-body-table-row-item">04721189452</div>
+        <div class="content-body-table-row-item">Yanqui</div>
+        <div class="content-body-table-row-item">Alvarez</div>
+        <div class="content-body-table-row-item">Elena</div>
+        <div class="content-body-table-row-item">Pensionista</div>
+      </div>
+      <div class="content-body-table-row">
+        <div class="content-body-table-row-item">1</div>
+        <div class="content-body-table-row-item">01</div>
+        <div class="content-body-table-row-item">23961599</div>
+        <div class="content-body-table-row-item">04721189452</div>
+        <div class="content-body-table-row-item">Yanqui</div>
+        <div class="content-body-table-row-item">Alvarez</div>
+        <div class="content-body-table-row-item">Elena</div>
+        <div class="content-body-table-row-item">Pensionista</div>
+      </div>
+      <div class="content-body-table-row">
+        <div class="content-body-table-row-item">1</div>
+        <div class="content-body-table-row-item">01</div>
+        <div class="content-body-table-row-item">23961599</div>
+        <div class="content-body-table-row-item">04721189452</div>
+        <div class="content-body-table-row-item">Yanqui</div>
+        <div class="content-body-table-row-item">Alvarez</div>
+        <div class="content-body-table-row-item">Elena</div>
+        <div class="content-body-table-row-item">Pensionista</div>
+      </div>
+    </div>
+    <div class="content-body-table-footer">
+      <div class="content-body-table-footer-box">
+        <i class="fa fa-angle-left" aria-hidden="true"></i>
+      </div>
+      <div class="content-body-table-footer-box">1</div>
+      <div class="content-body-table-footer-box">2</div>
+      <div class="content-body-table-footer-box">3</div>
+      <div class="content-body-table-footer-box">
+        <i class="fa fa-angle-right" aria-hidden="true"></i>
+      </div>
     </div>
   </div>
-  <div class="flex justify-center items-center gap-4">
-    <button class="hover:bg-[#314F9A] p-2 rounded-md text-white flex gap-2 items-center">
-      <span>Todos</span>
-    </button>
-    <button class="hover:bg-[#314F9A] p-2 rounded-md text-white flex gap-2 items-center">
-      <span>Agregados</span>
-    </button>
-  </div>
-  <table class="bg-[#314F9A] rounded-md text-white overflow-hidden">
-    <thead class="bg-white text-black">
-      <tr>
-        <th class="p-5">DNI</th>
-        <th>N° de cuenta</th>
-        <th>Apellido paterno</th>
-        <th>Apellido materno</th>
-        <th>Nombres</th>
-        <th>Mod. de Contra.</th>
-      </tr>
-    </thead>
-    <tbody class="">
-      <tr class="text-center cursor-pointer hover:bg-blue-500">
-        <td class="p-3">74701343</td>
-        <td>1119239283281</td>
-        <td>Ytucayasi Savina</td>
-        <td>Yupanqui Mendoza</td>
-        <td>Saul David Daniel Alonso</td>
-        <td>Presencial</td>
-      </tr>
-      <tr class="text-center cursor-pointer hover:bg-blue-500">
-        <td class="p-3">74701343</td>
-        <td>1119239283281</td>
-        <td>Ytucayasi Savina</td>
-        <td>Yupanqui Mendoza</td>
-        <td>Saul David Daniel Alonso</td>
-        <td>Presencial</td>
-      </tr>
-      <tr class="text-center cursor-pointer hover:bg-blue-500">
-        <td class="p-3">74701343</td>
-        <td>1119239283281</td>
-        <td>Ytucayasi Savina</td>
-        <td>Yupanqui Mendoza</td>
-        <td>Saul David Daniel Alonso</td>
-        <td>Presencial</td>
-      </tr>
-      <tr class="text-center cursor-pointer hover:bg-blue-500">
-        <td class="p-3">74701343</td>
-        <td>1119239283281</td>
-        <td>Ytucayasi Savina</td>
-        <td>Yupanqui Mendoza</td>
-        <td>Saul David Daniel Alonso</td>
-        <td>Presencial</td>
-      </tr>
-      <tr class="text-center cursor-pointer hover:bg-blue-500">
-        <td class="p-3">74701343</td>
-        <td>1119239283281</td>
-        <td>Ytucayasi Savina</td>
-        <td>Yupanqui Mendoza</td>
-        <td>Saul David Daniel Alonso</td>
-        <td>Presencial</td>
-      </tr>
-      <tr class="text-center cursor-pointer hover:bg-blue-500">
-        <td class="p-3">74701343</td>
-        <td>1119239283281</td>
-        <td>Ytucayasi Savina</td>
-        <td>Yupanqui Mendoza</td>
-        <td>Saul David Daniel Alonso</td>
-        <td>Presencial</td>
-      </tr>
-      <tr class="text-center cursor-pointer hover:bg-blue-500">
-        <td class="p-3">74701343</td>
-        <td>1119239283281</td>
-        <td>Ytucayasi Savina</td>
-        <td>Yupanqui Mendoza</td>
-        <td>Saul David Daniel Alonso</td>
-        <td>Presencial</td>
-      </tr>
-      <tr class="text-center cursor-pointer hover:bg-blue-500">
-        <td class="p-3">74701343</td>
-        <td>1119239283281</td>
-        <td>Ytucayasi Savina</td>
-        <td>Yupanqui Mendoza</td>
-        <td>Saul David Daniel Alonso</td>
-        <td>Presencial</td>
-      </tr>
-      <tr class="text-center cursor-pointer hover:bg-blue-500">
-        <td class="p-3">74701343</td>
-        <td>1119239283281</td>
-        <td>Ytucayasi Savina</td>
-        <td>Yupanqui Mendoza</td>
-        <td>Saul David Daniel Alonso</td>
-        <td>Presencial</td>
-      </tr>
-      <tr class="text-center cursor-pointer hover:bg-blue-500">
-        <td class="p-3">74701343</td>
-        <td>1119239283281</td>
-        <td>Ytucayasi Savina</td>
-        <td>Yupanqui Mendoza</td>
-        <td>Saul David Daniel Alonso</td>
-        <td>Presencial</td>
-      </tr>
-    </tbody>
-  </table>
-  <div class="flex justify-end gap-2">
-    <button class="bg-white text-black p-3 rounded-md flex gap-2 items-center shadow-md hover:bg-[#314F9A] hover:text-white">
-      <i class="fa fa-chevron-left"></i>
-    </button>
-    <button class="bg-white text-black p-3 rounded-md flex gap-2 items-center shadow-md hover:bg-[#314F9A] hover:text-white">
-      <i class="fa fa-chevron-right"></i>
-    </button>
-  </div>
+</div>
+<div class='content-footer'>
+  <button class="content-header-actions-btn">
+    <i class="fa fa-refresh content-header-actions-btn-icon" aria-hidden="true"></i>
+    <span>Verificar estado de los datos</span>
+  </button>
+  <button class="content-header-actions-btn">
+    <i class="fa fa-database content-header-actions-btn-icon" aria-hidden="true"></i>
+    <span>Ver registro de datos</span>
+  </button>
 </div>

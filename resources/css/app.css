@@ -87,7 +87,7 @@ body {
 .content {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 20px;
   background-color: antiquewhite;
   border-radius: 10px;
   width: 100%;
@@ -133,6 +133,7 @@ body {
   color: white;
   background-color: transparent;
   border-radius: 5px 5px 5px 5px;
+  cursor: pointer;
 }
 
 .content-header-actions-btn:hover, .content-header-actions-btn:hover > * {
@@ -211,6 +212,7 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .content-body-table-footer-box:hover {
@@ -224,4 +226,100 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* Modal */
+
+/* Estilos para el modal */
+.modal {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  background-color: white;
+  color: black;
+  width: 60%;
+  max-width: 500px;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-content-actions-cancel {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  color: white;
+  background-color: red;
+  cursor: pointer;
+}
+
+.modal-content-form {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.modal-content-form-file {
+  border: 2px solid #f2f2f2;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.modal-content-form-file::file-selector-button {
+  margin-right: 20px;
+  border: none;
+  background: var(--color-two);
+  padding: 10px 20px;
+  color: #fff;
+  cursor: pointer;
+  transition: background .2s ease-in-out;
+}
+
+.modal-content-form-file::file-selector-button:hover {
+  background: var(--color-three);
+}
+
+.modal-content-form-load {
+  padding: 10px;
+  background-color: var(--color-two);
+  color: white;
+  border-radius: 5px;
+  transition: background .2s ease-in-out;
+  cursor: pointer;
+}
+
+.modal-content-form-load:hover {
+  background-color: var(--color-three);
+}
+
+/* Estilos para la barra de progreso */
+.progress {
+  width: 100%;
+  height: 20px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #4caf50;
+  border-radius: 5px;
+  transition: width 0.3s ease-in-out;
 }

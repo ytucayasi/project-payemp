@@ -10,7 +10,6 @@
 
   <!-- Scripts -->
   @vite(['resources/css/app.css', 'resources/js/app.js'])
-
   <!-- Styles -->
   @livewireStyles
 </head>
@@ -25,17 +24,9 @@
             <span class='sidebar-menu-item-link-text'>{{ __('Empleados') }}</span>
           </x-nav-link>
         </li>
-        <li class='sidebar-menu-item'>
-          <x-nav-link href="{{ route('welcomen') }}" :active="request()->routeIs('welcomen')">
-            <i class="fa fa-users sidebar-menu-item-link-icon" aria-hidden="true"></i>
-            <span class='sidebar-menu-item-link-text'>{{ __('Otro') }}</span>
-          </x-nav-link>
-        </li>
       </ul>
     </nav>
-    <div class='content'>
-      {{ $slot }}
-    </div>
+    {{ $slot }}
   </div>
   @stack('modals')
 

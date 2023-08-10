@@ -5,13 +5,9 @@
       <input wire:model="search" class="content-header-search-input" placeholder="Ingresar empleado" type="text" />
     </div>
     <div class="content-header-actions">
-      <button wire:click="export" class="content-header-actions-btn">
-        <i class="fa fa-cloud-upload content-header-actions-btn-icon" aria-hidden="true"></i>
-        <span>Exportar Excel</span>
-      </button>
       <button wire:click="$toggle('showModal')" class="content-header-actions-btn">
         <i class="fa fa-download content-header-actions-btn-icon" aria-hidden="true"></i>
-        <span>Cargar Datos</span>
+        <span>Cargar Montos</span>
       </button>
     </div>
   </div>
@@ -23,26 +19,16 @@
       <div class="content-body-table-header">
         <div class="content-body-table-row">
           <div class="content-body-table-row-item">N°</div>
-          <div class="content-body-table-row-item">Tipo de doc.</div>
           <div class="content-body-table-row-item">DNI</div>
-          <div class="content-body-table-row-item">N° de cuenta</div>
-          <div class="content-body-table-row-item">Apellido paterno</div>
-          <div class="content-body-table-row-item">Apellido materno</div>
-          <div class="content-body-table-row-item">Nombres</div>
-          <div class="content-body-table-row-item">Modalidad de contratación</div>
+          <div class="content-body-table-row-item">Monto</div>
         </div>
       </div>
       <div class="content-body-table-body">
-        @foreach($empleados as $empleado)
+        @foreach($pagos as $pago)
         <div class="content-body-table-row">
-          <div class="content-body-table-row-item">{{$empleado->id}}</div>
-          <div class="content-body-table-row-item">{{$empleado->tipdoc}}</div>
-          <div class="content-body-table-row-item">{{$empleado->dni}}</div>
-          <div class="content-body-table-row-item">{{$empleado->nCuenta}}</div>
-          <div class="content-body-table-row-item">{{$empleado->aPaterno}}</div>
-          <div class="content-body-table-row-item">{{$empleado->aMaterno}}</div>
-          <div class="content-body-table-row-item">{{$empleado->nombres}}</div>
-          <div class="content-body-table-row-item">{{$empleado->modContratacion}}</div>
+          <div class="content-body-table-row-item">{{$pago->id}}</div>
+          <div class="content-body-table-row-item">{{$pago->dni}}</div>
+          <div class="content-body-table-row-item">{{$pago->monto}}</div>
         </div>
         @endforeach
       </div>
@@ -60,15 +46,24 @@
     </div>
   </div>
   <div class='content-footer'>
-    <button class="content-header-actions-btn">
+    <button wire:click="$toggle('showModal2')" class="content-header-actions-btn">
       <i class="fa fa-refresh content-header-actions-btn-icon" aria-hidden="true"></i>
-      <span>Verificar estado de los datos</span>
-    </button>
-    <button class="content-header-actions-btn">
-      <i class="fa fa-database content-header-actions-btn-icon" aria-hidden="true"></i>
-      <span>Ver registro de datos</span>
+      <span>Procesar datos</span>
     </button>
   </div>
+  @if ($showModal2)
+  <div class="modal">
+    <div class="modal-content modal-content__x2">
+      <div class="modal-content-actions">
+        <p class="modal-content-actions-title">Datos procesados</p>
+        <button wire:click="$toggle('showModal2')" class="modal-content-actions-cancel" type="submit">
+          <i class="fa fa-times" aria-hidden="true"></i>
+        </button>
+      </div>
+      
+    </div>
+  </div>
+  @endif
   <!-- Modal -->
   @if ($showModal)
   <div class="modal">

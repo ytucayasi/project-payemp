@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('empleados', function (Blueprint $table) {
             $table->id();
-            $table->string('n');
             $table->string('tipdoc');
             $table->string('dni');
             $table->string('nCuenta');
@@ -21,8 +20,7 @@ return new class extends Migration
             $table->string('aMaterno');
             $table->string('nombres');
             $table->string('modContratacion');
-            $table->float('monto')->nullable();
-            $table->char('estado', 1)->nullable();
+            $table->char('estado', 1)->default('1');
         });
     }
 

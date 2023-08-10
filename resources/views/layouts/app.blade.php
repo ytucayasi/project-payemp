@@ -24,6 +24,12 @@
             <span class='sidebar-menu-item-link-text'>{{ __('Empleados') }}</span>
           </x-nav-link>
         </li>
+        <li class='sidebar-menu-item'>
+          <x-nav-link href="{{ route('pagos') }}" :active="request()->routeIs('pagos')">
+            <i class="fa fa-users sidebar-menu-item-link-icon" aria-hidden="true"></i>
+            <span class='sidebar-menu-item-link-text'>{{ __('Pagos') }}</span>
+          </x-nav-link>
+        </li>
       </ul>
     </nav>
     {{ $slot }}

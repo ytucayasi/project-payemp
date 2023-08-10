@@ -2,11 +2,13 @@
 
 namespace App\Http\Livewire;
 
+use App\Exports\EmployeeExport;
 use App\Imports\EmployeeImport;
 use App\Models\Empleado;
 use Livewire\Component;
 use Maatwebsite\Excel\Facades\Excel;
 use Livewire\WithFileUploads;
+use Illuminate\Support\Facades\DB; // Añadir esta línea
 
 class EmployeeList extends Component
 {
@@ -37,9 +39,16 @@ class EmployeeList extends Component
       'excelFile' => 'required|mimes:xlsx,csv'
     ]);
 
-    Excel::import(new EmployeeImport($this), $this->excelFile);
+    DB::table('empleados')->truncate();
+
+    Excel::import(new EmployeeImport, $this->excelFile);
 
     session()->flash('message', 'Datos del Excel cargados exitosamente.');
+  }
+
+  public function export()
+  {
+    return Excel::download(new EmployeeExport, 'empleados.xlsx');
   }
 
   public function updateProgress($progress)

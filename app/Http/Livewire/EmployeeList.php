@@ -8,7 +8,7 @@ use App\Models\Empleado;
 use Livewire\Component;
 use Maatwebsite\Excel\Facades\Excel;
 use Livewire\WithFileUploads;
-use Illuminate\Support\Facades\DB; // Añadir esta línea
+use Illuminate\Support\Facades\DB;
 
 class EmployeeList extends Component
 {

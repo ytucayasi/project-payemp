@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 use Maatwebsite\Excel\Facades\Excel;
 use Livewire\WithFileUploads;
+use App\Exports\DnipagoExport;
+use App\Models\Empleado;
+use Maatwebsite\Excel\Concerns\FromArray;
+use Maatwebsite\Excel\Concerns\WithHeadings;
 
 class Dnipago extends Component
 {
@@ -45,4 +49,61 @@ class Dnipago extends Component
 
     session()->flash('message', 'Datos del Excel cargados exitosamente.');
   }
+  public function prepareDataForExport()
+  {
+      $data = [];
+
+      foreach ($this->pagos as $pago) {
+          $empleado = Empleado::where('dni', $pago->dni)->first();
+
+          if ($empleado) {
+              $data[] = [
+                  'dni' => $empleado->dni,
+                  'nCuenta' => $empleado->nCuenta,
+                  'aPaterno' => $empleado->aPaterno,
+                  'aMaterno' => $empleado->aMaterno,
+                  'nombres' => $empleado->nombres,
+                  'modContratacion' => $empleado->modContratacion,
+                  'monto' => $pago->monto,
+                  'estado' => $empleado->estado,
+              ];
+          }
+      }
+
+      return $data;
+  }
+  public function exportToExcel()
+    {
+        $data = $this->prepareDataForExport();
+
+        return Excel::download(new class($data) implements FromArray, WithHeadings {
+          private $data;
+      
+          public function __construct($data)
+          {
+              $this->data = $data;
+          }
+      
+          public function array(): array
+          {
+              return $this->data;
+          }
+      
+          public function headings(): array
+          {
+              return [
+                  'DNI',
+                  'N° CUENTA',
+                  'APELL. PATERNO',
+                  'APELL. MATERNO',
+                  'NOMBRES',
+                  'MODO. DE CONTRA.',
+                  'MONTO',
+                  'ESTADO',
+              ];
+          }
+      }, 'pagosEmpleado.xlsx');
+    }
+
+  
 }

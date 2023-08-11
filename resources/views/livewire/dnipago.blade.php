@@ -52,19 +52,58 @@
     </button>
   </div>
   @if ($showModal2)
-  <div class="modal">
-    <div class="modal-content modal-content__x2">
-      <div class="modal-content-actions">
-        <p class="modal-content-actions-title">Datos procesados</p>
-        <button wire:click="$toggle('showModal2')" class="modal-content-actions-cancel" type="submit">
-          <i class="fa fa-times" aria-hidden="true"></i>
-        </button>
+    <div class="modal">
+      <div class="modal-content modal-content__x2">
+        <div class="modal-content-actions">
+          <p class="modal-content-actions-title">Datos procesados</p>
+          <button wire:click="$toggle('showModal2')" class="modal-content-actions-cancel" type="button">
+            <i class="fa fa-times" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="modal-content-body">
+          <table>
+            <thead>
+              <tr>
+                <th class="text-center align-middle">DNI</th>
+                <th class="text-center align-middle">N° CUENTA</th>
+                <th class="text-center align-middle">APELL. PATERNO</th>
+                <th class="text-center align-middle">APELL. MATERNO</th>
+                <th class="text-center align-middle">NOMBRES</th>
+                <th class="text-center align-middle">MODO. DE CONTRA.</th>
+                <th class="text-center align-middle">MONTO</th>
+                <th class="text-center align-middle">ESTADO</th>
+              </tr>
+            </thead>
+            <tbody>
+              @foreach ($pagos as $pago)
+                @php
+                  $empleado = \App\Models\Empleado::where('dni', $pago->dni)->first();
+                @endphp
+                @if ($empleado)
+                  <tr>
+                    <td class="text-center align-middle">{{ $empleado->dni }}</td>
+                    <td class="text-center align-middle">{{ $empleado->nCuenta }}</td>
+                    <td class="text-center align-middle">{{ $empleado->aPaterno }}</td>
+                    <td class="text-center align-middle">{{ $empleado->aMaterno }}</td>
+                    <td class="text-center align-middle">{{ $empleado->nombres }}</td>
+                    <td class="text-center align-middle">{{ $empleado->modContratacion }}</td>
+                    <td class="text-center align-middle">{{ $pago->monto }}</td>
+                    <td class="text-center align-middle">{{ $empleado->estado }}</td>
+                  </tr>
+                @endif
+              @endforeach
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button wire:click="exportToExcel" class="content-header-actions-btn1">
+              <i class="fa fa-cloud-upload content-header-actions-btn-icon" aria-hidden="true"></i>
+              <span>Exportar Excel</span>
+          </button>
+        </div>
       </div>
-      
     </div>
-  </div>
   @endif
-  <!-- Modal -->
   @if ($showModal)
   <div class="modal">
     <div class="modal-content">

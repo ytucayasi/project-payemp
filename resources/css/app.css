@@ -327,3 +327,25 @@ body {
   border-radius: 5px;
   transition: width 0.3s ease-in-out;
 }
+
+.content-header-actions-btn1 {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  justify-content: center;
+  padding: 10px;
+  color: rgb(97, 13, 136);
+  background-color: #c4c4c4;
+  border-radius: 5px 5px 5px 5px;
+  cursor: pointer;
+}
+
+.content-header-actions-btn1:hover, .content-header-actions-btn1:hover > * {
+  background-color: var(--color-three);
+  color: white;
+}
+
+.content-header-actions-btn-icon {
+  font-size: 15px;
+  color: var(--color-three);
+}

@@ -109,15 +109,19 @@ body {
 }
 
 .content-header-search-icon {
-  padding: 10px;
+  height: 40px;
   background-color: var(--color-three);
   color: white;
   border-radius: 5px 0px 0px 5px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
 }
 
 .content-header-search-input {
   padding: 10px;
   border-radius: 0px 5px 5px 0px;
+  height: 40px;
 }
 
 .content-header-actions {
@@ -334,8 +338,8 @@ body {
   gap: 5px;
   justify-content: center;
   padding: 10px;
-  color: rgb(97, 13, 136);
-  background-color: #c4c4c4;
+  color: black;
+  background-color: transparent;
   border-radius: 5px 5px 5px 5px;
   cursor: pointer;
 }

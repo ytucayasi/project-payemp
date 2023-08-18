@@ -58,14 +58,11 @@ class Dnipago extends Component
 
           if ($empleado) {
               $data[] = [
-                  'dni' => $empleado->dni,
-                  'nCuenta' => $empleado->nCuenta,
-                  'aPaterno' => $empleado->aPaterno,
-                  'aMaterno' => $empleado->aMaterno,
-                  'nombres' => $empleado->nombres,
-                  'modContratacion' => $empleado->modContratacion,
+                  'num_cta' => $empleado->nCuenta,
+                  'tip_doc' => '01',
+                  'num_doc' => $empleado->dni,
                   'monto' => $pago->monto,
-                  'estado' => $empleado->estado,
+                  'estado' => 'I'
               ];
           }
       }
@@ -92,18 +89,13 @@ class Dnipago extends Component
           public function headings(): array
           {
               return [
-                  'DNI',
-                  'N° CUENTA',
-                  'APELL. PATERNO',
-                  'APELL. MATERNO',
-                  'NOMBRES',
-                  'MODO. DE CONTRA.',
-                  'MONTO',
-                  'ESTADO',
+                  'num_cta',
+                  'tipo_doc',
+                  'num_doc',
+                  'monto',
+                  'estado'
               ];
           }
       }, 'pagosEmpleado.xlsx');
     }
-
-  
 }

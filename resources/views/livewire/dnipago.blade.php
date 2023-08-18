@@ -71,10 +71,9 @@
               <div class="content-body-table-row-item">Tipo de doc.</div>
               <div class="content-body-table-row-item">DNI</div>
               <div class="content-body-table-row-item">N° de cuenta</div>
-              <div class="content-body-table-row-item">Apellido paterno</div>
-              <div class="content-body-table-row-item">Apellido materno</div>
-              <div class="content-body-table-row-item">Nombres</div>
+              <div class="content-body-table-row-item">Nombres y apellidos</div>
               <div class="content-body-table-row-item">Modalidad de contratación</div>
+              <div class="content-body-table-row-item">Monto</div>
             </div>
           </div>
           <div class="content-body-table-body">
@@ -88,10 +87,9 @@
               <div class="content-body-table-row-item">{{$empleado->tipdoc}}</div>
               <div class="content-body-table-row-item">{{$empleado->dni}}</div>
               <div class="content-body-table-row-item">{{$empleado->nCuenta}}</div>
-              <div class="content-body-table-row-item">{{$empleado->aPaterno}}</div>
-              <div class="content-body-table-row-item">{{$empleado->aMaterno}}</div>
-              <div class="content-body-table-row-item">{{$empleado->nombres}}</div>
+              <div class="content-body-table-row-item">{{$empleado->nombres}} {{$empleado->aPaterno}} {{$empleado->aMaterno}}</div>
               <div class="content-body-table-row-item">{{$empleado->modContratacion}}</div>
+              <div class="content-body-table-row-item">{{$pago->monto}}</div>
             </div>
             @endif
             @endforeach
